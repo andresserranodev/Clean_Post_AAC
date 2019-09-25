@@ -2,6 +2,6 @@ package com.puzzle.bench.post_aac.data
 
 import com.puzzle.bench.post_aac.model.Post
 
-interface DataSourceAllPost {
+interface DataSourcePost {
     fun getAllPost(): List<Post>
 }
