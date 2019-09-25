@@ -10,7 +10,7 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
 
-class DataSourcePostImplTest {
+class FetchAllPostServiceServiceImplTest {
 
     private lateinit var dataSourceAllPostServiceImpl: FetchAllPostServiceServiceImpl
     private val serviceResponse = getDummyListPostResponse()

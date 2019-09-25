@@ -55,11 +55,10 @@ dependencies {
     implementation dataDependencies.retrofitConverter
     implementation dataDependencies.retrofitCoroutinesAdapter
     //Room
-    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
-    implementation "androidx.room:room-ktx:$rootProject.roomVersion"
     kapt "androidx.room:room-compiler:$rootProject.roomVersion"
-    implementation "androidx.work:work-runtime-ktx:$rootProject.workVersion"
-
+    implementation dataDependencies.roomRuntime
+    implementation dataDependencies.roomKtx
+    implementation dataDependencies.runtimeKtx
 
     def generalTestDependencies = rootProject.ext.generalTestDependencies
     testImplementation generalTestDependencies.mockito,
