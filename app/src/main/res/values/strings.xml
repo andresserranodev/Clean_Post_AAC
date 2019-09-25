@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NavigationControler1</string>
+    <string name="button1">Button 1</string>
+    <string name="button2">Button 2</string>
+    <string name="button1_1">Button 1.1</string>
+    <string name="button2_2">button 2.2</string>
+</resources>

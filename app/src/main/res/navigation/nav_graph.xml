@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.puzzle.bench.navigationcontroler1.ui.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_mainFragment_to_button1Fragment"
+            app:destination="@id/button1Fragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_button2Fragment"
+            app:destination="@id/button2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/button1Fragment"
+        android:name="com.puzzle.bench.navigationcontroler1.ui.main.Button1Fragment"
+        android:label="Button1Fragment">
+        <argument
+            android:name="name"
+            android:defaultValue="World"
+            app:argType="string" />
+        <deepLink
+            android:id="@+id/deepLink"
+            android:autoVerify="true"
+            app:uri="www.mymoviemarket.com/button1Fragment/{name}" />
+    </fragment>
+    <fragment
+        android:id="@+id/button2Fragment"
+        android:name="com.puzzle.bench.navigationcontroler1.ui.main.Button2Fragment"
+        android:label="Button2Fragment">
+        <deepLink
+            android:id="@+id/deepLink2"
+            app:uri="www.puzzebench.com/button2Fragment/{id}" />
+        <argument
+            android:name="id"
+            android:defaultValue="1"
+            app:argType="string" />
+    </fragment>
+</navigation>
