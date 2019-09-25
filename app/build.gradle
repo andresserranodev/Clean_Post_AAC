@@ -23,6 +23,10 @@ android {
     dataBinding {
         enabled = true
     }
+    // work-runtime-ktx 2.1.0 and above now requires Java 8
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
@@ -41,12 +45,22 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
 
+    //Coroutines
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
+
     def dataDependencies = rootProject.ext.dataDependencies
     //Retrofit2
     implementation dataDependencies.retrofit
     implementation dataDependencies.retrofitConverter
     implementation dataDependencies.retrofitCoroutinesAdapter
-    
+    //Room
+    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
+    implementation "androidx.room:room-ktx:$rootProject.roomVersion"
+    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+    implementation "androidx.work:work-runtime-ktx:$rootProject.workVersion"
+
+
     def generalTestDependencies = rootProject.ext.generalTestDependencies
     testImplementation generalTestDependencies.mockito,
             generalTestDependencies.junit,
@@ -56,4 +70,5 @@ dependencies {
 
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
 }

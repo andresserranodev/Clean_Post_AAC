@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/dot_unread_post_content_description"
-            android:visibility="@{post.wasRead ? View.VISIBLE : View.GONE}"
+            android:visibility="@{post.wasRead ? View.GONE : View.VISIBLE}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -52,12 +52,12 @@
             android:id="@+id/is_favorite_post_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/thi_is_favorite_post_content_description"
             android:visibility="@{post.favorite ? View.VISIBLE : View.GONE}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_star_favorite_post_24dp"
-            android:contentDescription= "@string/thi_is_favorite_post_content_description" />
+            app:srcCompat="@drawable/ic_star_favorite_post_24dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

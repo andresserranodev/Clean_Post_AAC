@@ -3,39 +3,34 @@ package com.puzzle.bench.post_aac.data
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
-import com.nhaarman.mockitokotlin2.whenever
 import com.puzzle.bench.post_aac.data.MockData.Factory.getDummyListPostResponse
+import com.puzzle.bench.post_aac.data.mapper.PostMapper
 import com.puzzle.bench.post_aac.data.networking.JsonPlaceholderApi
-import com.puzzle.bench.post_aac.data.networking.mapper.PostMapperService
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
 
-import org.junit.Assert.*
-
 class DataSourcePostImplTest {
 
-    private lateinit var dataSourcePostImpl: DataSourcePostImpl
+    private lateinit var dataSourceAllPostServiceImpl: FetchAllPostServiceServiceImpl
     private val serviceResponse = getDummyListPostResponse()
     private val service = mock<JsonPlaceholderApi> {
-        onBlocking { getPostRequest() } doReturn serviceResponse
+        onBlocking { getAllPostRequest() } doReturn serviceResponse
     }
-    private var postMapperService = mock<PostMapperService>()
+    private var postMapper = mock<PostMapper>()
 
 
     @Before
     fun setUp() {
-        dataSourcePostImpl = DataSourcePostImpl(service, postMapperService)
+        dataSourceAllPostServiceImpl = FetchAllPostServiceServiceImpl(service, postMapper)
     }
 
     @Test
-    fun getAllPost() {
-
+    fun getPostRequest() {
         runBlocking {
-            dataSourcePostImpl.getAllPost()
-            verify(service).getPostRequest()
-            verify(postMapperService).transformPresentation(serviceResponse[0])
+            dataSourceAllPostServiceImpl.fetchAllPost()
+            verify(service).getAllPostRequest()
+            verify(postMapper).transformServiceToEntity(serviceResponse[0])
         }
     }
 }
