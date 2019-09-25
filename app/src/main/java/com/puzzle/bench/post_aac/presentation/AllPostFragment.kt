@@ -17,7 +17,7 @@ class AllPostFragment : Fragment() {
     private lateinit var binding: AllPostFragmentBinding
 
     private val viewModel: AllPostViewModel by viewModels {
-        ViewModelInjector.provideAllPostViewModel()
+        ViewModelInjector.provideAllPostViewModel(requireContext())
     }
 
     override fun onCreateView(
@@ -39,7 +39,6 @@ class AllPostFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
-        viewModel.getAllPost()
 
     }
 
@@ -48,7 +47,7 @@ class AllPostFragment : Fragment() {
     }
 
     private fun subscribeViewModel(allPostAdapter: AllPostAdapter) {
-        viewModel.getPostLiveData().observe(::getLifecycle) {
+        viewModel.fetchAllPost().observe(::getLifecycle) {
             allPostAdapter.submitList(it)
         }
     }

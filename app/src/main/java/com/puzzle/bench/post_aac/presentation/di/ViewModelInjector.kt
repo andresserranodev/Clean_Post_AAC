@@ -1,13 +1,16 @@
 package com.puzzle.bench.post_aac.presentation.di
 
-import com.puzzle.bench.post_aac.data.DataSourcePostImpl
-import com.puzzle.bench.post_aac.data.networking.RetrofitClient.Factory.makeServiceApi
-import com.puzzle.bench.post_aac.data.networking.mapper.PostMapperService
+import android.content.Context
+import com.puzzle.bench.post_aac.data.database.PostAACRoomDatabase
+import com.puzzle.bench.post_aac.data.PostStorageImpl
+import com.puzzle.bench.post_aac.data.mapper.PostMapper
 import com.puzzle.bench.post_aac.presentation.viewmodels.AllPostViewModelFactory
 
 object ViewModelInjector {
-
-    private fun getAllPost() = DataSourcePostImpl(makeServiceApi(), PostMapperService())
-
-    fun provideAllPostViewModel() = AllPostViewModelFactory(getAllPost())
+    fun provideAllPostViewModel(context: Context) = AllPostViewModelFactory(
+        PostStorageImpl.getInstance(
+            PostAACRoomDatabase.getInstance(context.applicationContext).postDao(),
+            PostMapper()
+        )
+    )
 }

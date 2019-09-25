@@ -1,20 +1,26 @@
 ext {
 
+    //data dependencies
     retrofit_coroutines_adapte_version = '0.9.2'
     retrofit_converter_gson_version = '2.6.0'
     retrofit_version = '2.6.0'
+    roomVersion = '2.2.0-rc01'
+
 
     //test dependencies
     mockito_version = '2.10.0'
     jUnit_version = '4.12'
     mockitoInline_version = '2.18.3'
     mockitoKotlin_version = '2.1.0'
-
+    room_version = '2.2.0-rc01'
 
     dataDependencies = [
             retrofit                 : "com.squareup.retrofit2:retrofit:${retrofit_version}",
             retrofitConverter        : "com.squareup.retrofit2:converter-gson:${retrofit_converter_gson_version}",
-            retrofitCoroutinesAdapter: "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${retrofit_coroutines_adapte_version}"
+            retrofitCoroutinesAdapter: "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${retrofit_coroutines_adapte_version}",
+            roomRuntime              : "androidx.room:room-runtime:${room_version}",
+            roomKtx                  : "androidx.room:room-ktx:${room_version}",
+            runtimeKtx               : "androidx.work:work-runtime-ktx:${room_version}"
     ]
 
     generalTestDependencies = [
@@ -22,6 +28,6 @@ ext {
             junit        : "junit:junit:${jUnit_version}",
             kotlinTest   : "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version",
             mockitoInline: "org.mockito:mockito-inline:${mockitoInline_version}",
-            mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoKotlin_version}"
+            mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoKotlin_version}",
     ]
 }
