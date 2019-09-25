@@ -4,11 +4,24 @@ ext {
     retrofit_converter_gson_version = '2.6.0'
     retrofit_version = '2.6.0'
 
+    //test dependencies
+    mockito_version = '2.10.0'
+    jUnit_version = '4.12'
+    mockitoInline_version = '2.18.3'
+    mockitoKotlin_version = '2.1.0'
 
 
     dataDependencies = [
             retrofit                 : "com.squareup.retrofit2:retrofit:${retrofit_version}",
             retrofitConverter        : "com.squareup.retrofit2:converter-gson:${retrofit_converter_gson_version}",
             retrofitCoroutinesAdapter: "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${retrofit_coroutines_adapte_version}"
+    ]
+
+    generalTestDependencies = [
+            mockito      : "org.mockito:mockito-core:${mockito_version}",
+            junit        : "junit:junit:${jUnit_version}",
+            kotlinTest   : "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version",
+            mockitoInline: "org.mockito:mockito-inline:${mockitoInline_version}",
+            mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoKotlin_version}"
     ]
 }

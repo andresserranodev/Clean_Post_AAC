@@ -1,5 +1,6 @@
 package com.puzzle.bench.post_aac.data
 
+import com.puzzle.bench.post_aac.data.networking.responses.PostResponse
 import com.puzzle.bench.post_aac.model.Post
 import kotlin.random.Random.Default.nextBoolean
 
@@ -18,6 +19,15 @@ class MockData {
                 "$BASE_BODY$it",
                 nextBoolean(),
                 nextBoolean()
+            )
+        }
+
+        fun getDummyListPostResponse(): List<PostResponse> = (1..20).map {
+            PostResponse(
+                it,
+                it,
+                "$BASE_TITLE$it",
+                "$BASE_BODY$it"
             )
         }
     }
