@@ -1,4 +1,4 @@
-package com.puzzle.bench.post_aac
+package com.puzzle.bench.post_aac.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,9 +7,10 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.tabs.TabLayoutMediator
-import com.puzzle.bench.post_aac.adapter.MAIN_POST_LIST
-import com.puzzle.bench.post_aac.adapter.MY_FAVORITE_POST
-import com.puzzle.bench.post_aac.adapter.PostPagerAdapter
+import com.puzzle.bench.post_aac.R
+import com.puzzle.bench.post_aac.presentation.adapter.MAIN_POST_LIST
+import com.puzzle.bench.post_aac.presentation.adapter.MY_FAVORITE_POST
+import com.puzzle.bench.post_aac.presentation.adapter.PostPagerAdapter
 import com.puzzle.bench.post_aac.databinding.ViewPagerFragmentBinding
 
 class HomeViewPagerFragment : Fragment() {

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="post"
+            type="com.puzzle.bench.post_aac.model.Post" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_container_post_item"
+        android:onClick="@{clickListener}">
+
+        <ImageView
+            android:id="@+id/unread_post_status_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/dot_unread_post_content_description"
+            android:visibility="@{post.wasRead ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/dot_unread_post" />
+
+        <TextView
+            android:id="@+id/item_title_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/post_title_item_margin_start"
+            android:ellipsize="end"
+            android:maxLines="@integer/item_post_body_text_max_lines"
+            android:text="@{post.body}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/is_favorite_post_iv"
+            app:layout_constraintStart_toEndOf="@+id/unread_post_status_iv"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/action_refresh" />
+
+        <ImageView
+            android:id="@+id/is_favorite_post_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{post.favorite ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_star_favorite_post_24dp"
+            android:contentDescription= "@string/thi_is_favorite_post_content_description" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

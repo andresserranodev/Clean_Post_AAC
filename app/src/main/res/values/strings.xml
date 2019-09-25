@@ -7,4 +7,6 @@
     <string name="favorite_post">Favorite Post</string>
     <string name="details">Details the Id is :%s</string>
     <string name="all_post">All Post</string>
+    <string name="dot_unread_post_content_description">This is new post</string>
+    <string name="thi_is_favorite_post_content_description">This is favorite post</string>
 </resources>
