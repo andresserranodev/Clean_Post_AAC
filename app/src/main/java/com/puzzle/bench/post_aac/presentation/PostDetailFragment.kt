@@ -1,11 +1,11 @@
-package com.puzzle.bench.post_aac
+package com.puzzle.bench.post_aac.presentation
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.puzzle.bench.post_aac.R
 import kotlinx.android.synthetic.main.post_details_fragment.*
 
 class PostDetailFragment : Fragment() {
@@ -15,7 +15,7 @@ class PostDetailFragment : Fragment() {
 
         arguments?.let {
             val safeArgs = PostDetailFragmentArgs.fromBundle(it)
-            detail_tv.text = this.getString(R.string.details, safeArgs.postId)
+            detail_tv.text = safeArgs.postId
         }
     }
 

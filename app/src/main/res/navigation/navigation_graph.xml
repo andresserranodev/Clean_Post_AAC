@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/homeViewPagerFragment"
-        android:name="com.puzzle.bench.post_aac.HomeViewPagerFragment"
+        android:name="com.puzzle.bench.post_aac.presentation.HomeViewPagerFragment"
         android:label="HomeViewPagerFragment">
         <action
             android:id="@+id/action_homeViewPagerFragment_to_postDetailFragment"
@@ -14,7 +14,7 @@
     </fragment>
     <fragment
         android:id="@+id/postDetailFragment"
-        android:name="com.puzzle.bench.post_aac.PostDetailFragment"
+        android:name="com.puzzle.bench.post_aac.presentation.PostDetailFragment"
         android:label="PostDetailFragment">
         <argument
             android:name="postId"

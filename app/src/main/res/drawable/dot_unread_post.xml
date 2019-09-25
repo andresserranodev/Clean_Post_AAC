@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@color/unread_post_blue_dot" />
+    <size android:width="@dimen/blue_dot_unread_post_size" android:height="@dimen/blue_dot_unread_post_size"/>
+</shape>

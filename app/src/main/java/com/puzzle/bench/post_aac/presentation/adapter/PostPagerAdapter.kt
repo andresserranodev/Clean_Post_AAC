@@ -1,9 +1,9 @@
-package com.puzzle.bench.post_aac.adapter
+package com.puzzle.bench.post_aac.presentation.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.puzzle.bench.post_aac.FavoritePostFragment
-import com.puzzle.bench.post_aac.AllPostFragment
+import com.puzzle.bench.post_aac.presentation.FavoritePostFragment
+import com.puzzle.bench.post_aac.presentation.AllPostFragment
 import java.lang.IndexOutOfBoundsException
 
 const val MAIN_POST_LIST = 0
