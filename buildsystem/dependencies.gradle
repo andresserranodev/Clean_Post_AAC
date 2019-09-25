@@ -1,0 +1,14 @@
+ext {
+
+    retrofit_coroutines_adapte_version = '0.9.2'
+    retrofit_converter_gson_version = '2.6.0'
+    retrofit_version = '2.6.0'
+
+
+
+    dataDependencies = [
+            retrofit                 : "com.squareup.retrofit2:retrofit:${retrofit_version}",
+            retrofitConverter        : "com.squareup.retrofit2:converter-gson:${retrofit_converter_gson_version}",
+            retrofitCoroutinesAdapter: "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${retrofit_coroutines_adapte_version}"
+    ]
+}
