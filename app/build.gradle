@@ -41,7 +41,19 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
 
-    testImplementation 'junit:junit:4.12'
+    def dataDependencies = rootProject.ext.dataDependencies
+    //Retrofit2
+    implementation dataDependencies.retrofit
+    implementation dataDependencies.retrofitConverter
+    implementation dataDependencies.retrofitCoroutinesAdapter
+    
+    def generalTestDependencies = rootProject.ext.generalTestDependencies
+    testImplementation generalTestDependencies.mockito,
+            generalTestDependencies.junit,
+            generalTestDependencies.mockitoInline,
+            generalTestDependencies.kotlinTest,
+            generalTestDependencies.mockitoKotlin
+
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
