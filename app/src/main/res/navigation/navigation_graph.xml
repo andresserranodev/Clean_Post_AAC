@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_grahp"
+    app:startDestination="@id/homeViewPagerFragment">
+
+    <fragment
+        android:id="@+id/homeViewPagerFragment"
+        android:name="com.puzzle.bench.post_aac.HomeViewPagerFragment"
+        android:label="HomeViewPagerFragment">
+        <action
+            android:id="@+id/action_homeViewPagerFragment_to_postDetailFragment"
+            app:destination="@id/postDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postDetailFragment"
+        android:name="com.puzzle.bench.post_aac.PostDetailFragment"
+        android:label="PostDetailFragment">
+        <argument
+            android:name="postId"
+            android:defaultValue="1"
+            app:argType="string" />
+    </fragment>
+</navigation>
