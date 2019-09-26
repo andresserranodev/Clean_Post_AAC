@@ -7,6 +7,6 @@ class FavoritePostViewModel internal constructor(
     private val postStorageImpl: PostStorageImpl
 ) : ViewModel() {
 
-    val allFavoritePostLiveData = postStorageImpl.getAllFavPost()
+    val allFavoritePostLiveData = postStorageImpl.getAllFavoritePost()
 
 }
