@@ -19,7 +19,7 @@ class PostDetailFragment : Fragment() {
     private val args: PostDetailFragmentArgs by navArgs()
 
     private val viewModel: PostDetailViewModel by viewModels {
-        ViewModelInjector.providePostDetailsViewModel(requireContext(), args.postId)
+        ViewModelInjector.providePostDetailsViewModel(requireContext(), args.postId, args.userId)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -28,6 +28,9 @@ class PostDetailFragment : Fragment() {
         viewModel.maskAsAFavorite()
         viewModel.postInfoLiveData.observe(viewLifecycleOwner) {
             body_tv.text = it.body
+        }
+        viewModel.userInfoLiveData.observe(viewLifecycleOwner) {
+            name_tv.text = it.name
         }
 
     }

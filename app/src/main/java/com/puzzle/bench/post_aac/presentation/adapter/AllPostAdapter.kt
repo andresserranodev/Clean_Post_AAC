@@ -49,6 +49,7 @@ class AllPostAdapter : ListAdapter<Post, RecyclerView.ViewHolder>(AllPostDiffCal
             val action =
                 HomeViewPagerFragmentDirections.actionHomeViewPagerFragmentToPostDetailFragment()
             action.postId = post.postId
+            action.userId = post.userId
             Navigation.findNavController(view).navigate(action)
         }
     }

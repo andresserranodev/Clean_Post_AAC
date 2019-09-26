@@ -10,9 +10,9 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
 
-class FetchAllPostServiceServiceImplTest {
+class FetchAllPostServiceImplTest {
 
-    private lateinit var dataSourceAllPostServiceImpl: FetchAllPostServiceServiceImpl
+    private lateinit var dataSourceAllPostServiceImpl: FetchAllPostServiceImpl
     private val serviceResponse = getDummyListPostResponse()
     private val service = mock<JsonPlaceholderApi> {
         onBlocking { getAllPostRequest() } doReturn serviceResponse
@@ -22,7 +22,7 @@ class FetchAllPostServiceServiceImplTest {
 
     @Before
     fun setUp() {
-        dataSourceAllPostServiceImpl = FetchAllPostServiceServiceImpl(service, postMapper)
+        dataSourceAllPostServiceImpl = FetchAllPostServiceImpl(service, postMapper)
     }
 
     @Test
