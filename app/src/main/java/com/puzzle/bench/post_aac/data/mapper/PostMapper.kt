@@ -10,7 +10,7 @@ class PostMapper : BaseMapperData<PostResponse, PostEntity, Post> {
     override fun transformServiceToEntity(service: PostResponse) =
         PostEntity(
             service.postId, service.userId, service.title, service.body,
-            wasRead = false,
+            wasRead = true,
             isFavorite = false
         )
 

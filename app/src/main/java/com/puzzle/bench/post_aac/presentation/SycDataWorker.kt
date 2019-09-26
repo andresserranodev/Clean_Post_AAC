@@ -7,9 +7,12 @@ import androidx.work.WorkerParameters
 import com.puzzle.bench.post_aac.data.FetchAllPostServiceImpl
 import com.puzzle.bench.post_aac.data.FetchAllUsersServiceImpl
 import com.puzzle.bench.post_aac.data.database.PostAACRoomDatabase
+import com.puzzle.bench.post_aac.data.database.entity.PostEntity
 import com.puzzle.bench.post_aac.data.mapper.PostMapper
 import com.puzzle.bench.post_aac.data.mapper.UserMapper
 import com.puzzle.bench.post_aac.data.networking.RetrofitClient
+import com.puzzle.bench.post_aac.data.utils.utils.BusinesRulesSynPost.getReadedPosts
+import com.puzzle.bench.post_aac.data.utils.utils.BusinesRulesSynPost.getUnReadPosts
 import kotlinx.coroutines.coroutineScope
 
 class SycDataWorker(context: Context, workerParams: WorkerParameters) :
@@ -17,12 +20,17 @@ class SycDataWorker(context: Context, workerParams: WorkerParameters) :
 
     override suspend fun doWork(): Result = coroutineScope {
         try {
-            val postServiceImp =
-                FetchAllPostServiceImpl(RetrofitClient.makeServiceApi(), PostMapper())
+
+            val serviceRepose = FetchAllPostServiceImpl(
+                RetrofitClient.makeServiceApi(),
+                PostMapper()
+            ).fetchAllPost()
+
             val usersServiceImp =
                 FetchAllUsersServiceImpl(RetrofitClient.makeServiceApi(), UserMapper())
             val database = PostAACRoomDatabase.getInstance(applicationContext)
-            database.postDao().insertAll(postServiceImp.fetchAllPost())
+            database.postDao().insertAll(getUnReadPosts(serviceRepose))
+            database.postDao().insertAll(getReadedPosts(serviceRepose))
             database.userDao().insertAll(usersServiceImp.fetchAllUsers())
             Result.success()
         } catch (ex: Exception) {
