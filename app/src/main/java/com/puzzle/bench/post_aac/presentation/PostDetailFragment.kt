@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.lifecycle.observe
 import androidx.navigation.fragment.navArgs
 import com.puzzle.bench.post_aac.R
@@ -25,12 +24,19 @@ class PostDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.updateStatus()
-        viewModel.maskAsAFavorite()
+        viewModel.fetchComments()
         viewModel.postInfoLiveData.observe(viewLifecycleOwner) {
             body_tv.text = it.body
         }
         viewModel.userInfoLiveData.observe(viewLifecycleOwner) {
             name_tv.text = it.name
+        }
+        viewModel.commentsLiveData.observe(viewLifecycleOwner) {
+            if (it.isEmpty()) {
+                viewModel.fetchComments()
+            } else {
+                comment_tv.text = it[0].body
+            }
         }
 
     }
