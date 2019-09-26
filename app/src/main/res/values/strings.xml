@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Post_AAC</string>
-    <string name="action_refresh">Refresh</string>
+    <string name="action_refresh">refresh_action</string>
+    <string name="action_add_to_favorites">add_to_favorites_action</string>
+    <string name="action_remove_to_favorites">remove_to_favorites_action</string>
+
+
     <string name="tap_title_all_post">ALL</string>
     <string name="tap_title_favorite">FAVORITES</string>
     <string name="app_title">Post</string>
