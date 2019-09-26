@@ -25,6 +25,14 @@ class PostStorageImpl(
         }
     }
 
+    fun getAllFavPost(): LiveData<List<Post>> {
+        return Transformations.map(postDao.getAllFavPost()) { postListEntity ->
+            postListEntity.map {
+                postMapper.transformEntityToPresentation(it)
+            }
+        }
+    }
+
 
     fun getPostById(idPost: Int): LiveData<Post> {
         return Transformations.map(postDao.getPostById(idPost)) {

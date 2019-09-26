@@ -15,6 +15,9 @@ interface PostDao {
     @Query("SELECT * from post_table WHERE idPost = :idPost")
     fun getPostById(idPost: Int): LiveData<PostEntity>
 
+    @Query("SELECT * from post_table WHERE isFavorite = 1")
+    fun getAllFavPost(): LiveData<List<PostEntity>>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertAll(post: List<PostEntity>)
 

@@ -146,7 +146,7 @@
                     app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/post_comments_title_tv"
-                    app:spanCount="@integer/spanCount_all_post_list" />
+                    app:spanCount="@integer/spanCount_comments_list" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
