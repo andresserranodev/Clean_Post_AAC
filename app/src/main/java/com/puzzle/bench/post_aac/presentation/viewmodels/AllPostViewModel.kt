@@ -2,10 +2,18 @@ package com.puzzle.bench.post_aac.presentation.viewmodels
 
 import androidx.lifecycle.*
 import com.puzzle.bench.post_aac.data.PostStorageImpl
+import kotlinx.coroutines.launch
 
 class AllPostViewModel internal constructor(
     private val postStorageImpl: PostStorageImpl
 ) :
     ViewModel() {
-        fun fetchAllPost() = postStorageImpl.getAllPost()
+
+    fun getAllPostLiveData() = postStorageImpl.getAllPost()
+
+    fun deleteAll() {
+        viewModelScope.launch {
+            postStorageImpl.deleteAll()
+        }
+    }
 }

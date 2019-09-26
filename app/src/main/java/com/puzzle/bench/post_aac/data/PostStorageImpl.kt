@@ -17,12 +17,29 @@ class PostStorageImpl(
         postDao.insertAll(postList)
     }
 
-    fun getAllPost(): LiveData<List<Post>> {
+     fun getAllPost(): LiveData<List<Post>> {
         return Transformations.map(postDao.getAllPost()) { postListEntity ->
             postListEntity.map {
                 postMapper.transformEntityToPresentation(it)
             }
         }
+    }
+
+    suspend fun getPostById(idPost: Int): Post {
+        return postMapper.transformEntityToPresentation(postDao.getPostById(idPost))
+
+    }
+
+    suspend fun deleteAll() {
+        postDao.deleteAll()
+    }
+
+    suspend fun updateWasRead(idPost: Int, wasRead: Boolean) {
+        postDao.updateWasRead(idPost, wasRead)
+    }
+
+    suspend fun updateIsFavorite(idPost: Int, isFavorite: Boolean) {
+        postDao.updateIsFavorite(idPost, isFavorite)
     }
 
     companion object {

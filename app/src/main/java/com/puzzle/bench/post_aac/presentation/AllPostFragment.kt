@@ -32,6 +32,9 @@ class AllPostFragment : Fragment() {
             adapter = allPostAdapter
             addItemDecoration(DividerItemDecoration(this.context, VERTICAL))
         }
+        binding.deleteAllPostFb.setOnClickListener {
+            viewModel.deleteAll()
+        }
         subscribeViewModel(allPostAdapter)
         return binding.root
     }
@@ -47,7 +50,7 @@ class AllPostFragment : Fragment() {
     }
 
     private fun subscribeViewModel(allPostAdapter: AllPostAdapter) {
-        viewModel.fetchAllPost().observe(::getLifecycle) {
+        viewModel.getAllPostLiveData().observe(::getLifecycle) {
             allPostAdapter.submitList(it)
         }
     }
