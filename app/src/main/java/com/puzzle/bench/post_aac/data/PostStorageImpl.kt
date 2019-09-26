@@ -25,6 +25,25 @@ class PostStorageImpl(
         }
     }
 
+
+    fun getPostById(idPost: Int): LiveData<Post> {
+        return Transformations.map(postDao.getPostById(idPost)) {
+            postMapper.transformEntityToPresentation(it)
+        }
+    }
+
+    suspend fun deleteAll() {
+        postDao.deleteAll()
+    }
+
+    suspend fun updateWasRead(idPost: Int, wasRead: Boolean) {
+        postDao.updateWasRead(idPost, wasRead)
+    }
+
+    suspend fun updateIsFavorite(idPost: Int, isFavorite: Boolean) {
+        postDao.updateIsFavorite(idPost, isFavorite)
+    }
+
     companion object {
         @Volatile
         private var instance: PostStorageImpl? = null
