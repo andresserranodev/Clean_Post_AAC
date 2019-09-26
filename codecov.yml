@@ -34,7 +34,8 @@ ignore:
   - "**/callbacks/**"
   - "**/room/**"
   - "**/android/**"
-  - "**/retrofit/**"
+  - "**/workers/**"
+
 
 
 
