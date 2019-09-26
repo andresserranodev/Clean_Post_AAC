@@ -16,7 +16,7 @@ class utils {
 
         }
 
-        fun getReadedPosts(serviceRepose: List<PostEntity>): List<PostEntity> {
+        fun getReadPosts(serviceRepose: List<PostEntity>): List<PostEntity> {
             return serviceRepose.toMutableList().subList(20, serviceRepose.size)
 
         }
