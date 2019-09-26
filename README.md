@@ -5,6 +5,8 @@
 #  Postapp Android Architecture Components
 Follow :
 
+[Dependency Inversion Principle (DIP)](https://martinfowler.com/articles/dipInTheWild.html)(without frameworks)
+
 [MVVM Components](https://devexperto.com/mvvm-vs-mvp/) 
 
 [Continuous Integration](https://www.martinfowler.com/articles/continuousIntegration.html) [Using Tavis](https://travis-ci.org/)
