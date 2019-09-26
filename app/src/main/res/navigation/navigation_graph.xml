@@ -20,5 +20,9 @@
             android:name="postId"
             android:defaultValue="1"
             app:argType="integer" />
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="1" />
     </fragment>
 </navigation>
