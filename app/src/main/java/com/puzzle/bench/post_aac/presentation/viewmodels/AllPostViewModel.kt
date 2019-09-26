@@ -16,4 +16,13 @@ class AllPostViewModel internal constructor(
             postStorageImpl.deleteAll()
         }
     }
+
+    fun deletePost(position: Int) {
+        viewModelScope.launch {
+            allPostLiveData.value?.get(position)?.postId?.let {
+                postStorageImpl.deleteByIdPost(it)
+            }
+
+        }
+    }
 }

@@ -21,6 +21,9 @@ interface PostDao {
     @Query("DELETE FROM post_table")
     suspend fun deleteAll()
 
+    @Query("DELETE FROM post_table WHERE idPost = :idPost")
+    suspend fun deleteByIdPost(idPost: Int)
+
     @Query("UPDATE post_table SET wasRead = :wasRead WHERE idPost = :idPost")
     suspend fun updateWasRead(idPost: Int, wasRead: Boolean)
 
