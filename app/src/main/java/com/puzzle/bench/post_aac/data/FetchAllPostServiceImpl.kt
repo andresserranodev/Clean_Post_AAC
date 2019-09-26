@@ -2,7 +2,7 @@ package com.puzzle.bench.post_aac.data
 
 import com.puzzle.bench.post_aac.data.database.entity.PostEntity
 import com.puzzle.bench.post_aac.data.mapper.PostMapper
-import com.puzzle.bench.post_aac.data.networking.JsonPlaceholderApi
+import com.puzzle.bench.post_aac.data.networking.retrofit.JsonPlaceholderApi
 
 class FetchAllPostServiceImpl(
     private val jsonPlaceholderApi: JsonPlaceholderApi,

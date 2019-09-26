@@ -1,4 +1,4 @@
-package com.puzzle.bench.post_aac.presentation
+package com.puzzle.bench.post_aac.presentation.callbacks
 
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView

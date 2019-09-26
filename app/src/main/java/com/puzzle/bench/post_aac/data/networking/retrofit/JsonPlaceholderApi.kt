@@ -1,4 +1,4 @@
-package com.puzzle.bench.post_aac.data.networking
+package com.puzzle.bench.post_aac.data.networking.retrofit
 
 import com.puzzle.bench.post_aac.data.networking.responses.CommentsResponse
 import com.puzzle.bench.post_aac.data.networking.responses.PostResponse

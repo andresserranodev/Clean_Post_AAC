@@ -5,7 +5,7 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.AllPostFragment">
+        tools:context=".presentation.fragment.AllPostFragment">
 
         <ProgressBar
             android:id="@+id/progressBar"

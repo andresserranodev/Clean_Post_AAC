@@ -1,6 +1,6 @@
 package com.puzzle.bench.post_aac.model
 
-data class Post(
+class Post(
     val postId: Int = 0,
     val userId: Int,
     val title: String,

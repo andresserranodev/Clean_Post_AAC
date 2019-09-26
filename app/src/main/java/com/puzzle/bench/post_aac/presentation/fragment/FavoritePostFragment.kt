@@ -1,4 +1,4 @@
-package com.puzzle.bench.post_aac.presentation
+package com.puzzle.bench.post_aac.presentation.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,6 @@ import androidx.lifecycle.observe
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.puzzle.bench.post_aac.R
-import com.puzzle.bench.post_aac.presentation.adapter.AllPostAdapter
 import com.puzzle.bench.post_aac.presentation.adapter.FavoritePostAdapter
 import com.puzzle.bench.post_aac.presentation.di.ViewModelInjector
 import com.puzzle.bench.post_aac.presentation.viewmodels.FavoritePostViewModel

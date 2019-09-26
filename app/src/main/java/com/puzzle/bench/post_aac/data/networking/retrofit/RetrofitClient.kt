@@ -1,4 +1,4 @@
-package com.puzzle.bench.post_aac.data.networking
+package com.puzzle.bench.post_aac.data.networking.retrofit
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import retrofit2.Retrofit
