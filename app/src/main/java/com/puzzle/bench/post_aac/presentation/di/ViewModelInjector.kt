@@ -2,11 +2,11 @@ package com.puzzle.bench.post_aac.presentation.di
 
 import android.content.Context
 import com.puzzle.bench.post_aac.data.*
-import com.puzzle.bench.post_aac.data.database.PostAACRoomDatabase
+import com.puzzle.bench.post_aac.data.database.room.PostAACRoomDatabase
 import com.puzzle.bench.post_aac.data.mapper.CommentMapper
 import com.puzzle.bench.post_aac.data.mapper.PostMapper
 import com.puzzle.bench.post_aac.data.mapper.UserMapper
-import com.puzzle.bench.post_aac.data.networking.RetrofitClient
+import com.puzzle.bench.post_aac.data.networking.retrofit.RetrofitClient
 import com.puzzle.bench.post_aac.presentation.viewmodels.AllPostViewModelFactory
 import com.puzzle.bench.post_aac.presentation.viewmodels.FavoritePostViewModelFactory
 import com.puzzle.bench.post_aac.presentation.viewmodels.PostDetailViewModelFactory

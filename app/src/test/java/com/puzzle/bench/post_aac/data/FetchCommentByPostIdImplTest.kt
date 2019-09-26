@@ -4,12 +4,10 @@ import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.puzzle.bench.post_aac.data.mapper.CommentMapper
-import com.puzzle.bench.post_aac.data.networking.JsonPlaceholderApi
+import com.puzzle.bench.post_aac.data.networking.retrofit.JsonPlaceholderApi
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
-
-import org.junit.Assert.*
 
 class FetchCommentByPostIdImplTest {
 

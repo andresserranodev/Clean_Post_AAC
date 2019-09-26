@@ -5,7 +5,7 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.puzzle.bench.post_aac.data.MockData.Factory.getDummyListPostResponse
 import com.puzzle.bench.post_aac.data.mapper.PostMapper
-import com.puzzle.bench.post_aac.data.networking.JsonPlaceholderApi
+import com.puzzle.bench.post_aac.data.networking.retrofit.JsonPlaceholderApi
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test

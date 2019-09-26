@@ -1,11 +1,8 @@
 package com.puzzle.bench.post_aac.data
 
 import com.puzzle.bench.post_aac.data.database.entity.UserEntity
-import com.puzzle.bench.post_aac.data.mapper.PostMapper
 import com.puzzle.bench.post_aac.data.mapper.UserMapper
-import com.puzzle.bench.post_aac.data.networking.JsonPlaceholderApi
-import com.puzzle.bench.post_aac.data.networking.responses.UserResponse
-import com.puzzle.bench.post_aac.model.User
+import com.puzzle.bench.post_aac.data.networking.retrofit.JsonPlaceholderApi
 
 class FetchAllUsersServiceImpl(
     private val jsonPlaceholderApi: JsonPlaceholderApi,

@@ -1,4 +1,4 @@
-package com.puzzle.bench.post_aac.data.database
+package com.puzzle.bench.post_aac.data.database.room
 
 import android.content.Context
 import androidx.room.Database
@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
-import com.puzzle.bench.post_aac.presentation.SycDataWorker
+import com.puzzle.bench.post_aac.presentation.workers.SycDataWorker
 import com.puzzle.bench.post_aac.data.database.dao.CommentDao
 import com.puzzle.bench.post_aac.data.database.dao.PostDao
 import com.puzzle.bench.post_aac.data.database.dao.UserDao
@@ -29,13 +29,19 @@ abstract class PostAACRoomDatabase : RoomDatabase() {
         private var instance: PostAACRoomDatabase? = null
 
         fun getInstance(context: Context): PostAACRoomDatabase {
-            return instance ?: synchronized(this) {
-                instance ?: buildDatabase(context).also { instance = it }
+            return instance
+                ?: synchronized(this) {
+                instance
+                    ?: buildDatabase(
+                        context
+                    ).also { instance = it }
             }
         }
 
         private fun buildDatabase(context: Context): PostAACRoomDatabase {
-            return Room.databaseBuilder(context, PostAACRoomDatabase::class.java, DATABASE_NAME)
+            return Room.databaseBuilder(context, PostAACRoomDatabase::class.java,
+                DATABASE_NAME
+            )
                 .addCallback(object : RoomDatabase.Callback() {
                     override fun onCreate(db: SupportSQLiteDatabase) {
                         super.onCreate(db)
