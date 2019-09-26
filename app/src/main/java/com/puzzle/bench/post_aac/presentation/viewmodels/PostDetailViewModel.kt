@@ -43,4 +43,11 @@ class PostDetailViewModel(
             postStorageImpl.updateIsFavorite(postId, true)
         }
     }
+
+    fun removeFromFavorite() {
+        viewModelScope.launch {
+            postStorageImpl.updateIsFavorite(postId, false)
+        }
+    }
+
 }

@@ -3,6 +3,7 @@ package com.puzzle.bench.post_aac.data.mapper
 import com.puzzle.bench.post_aac.data.database.entity.PostEntity
 import com.puzzle.bench.post_aac.data.networking.responses.PostResponse
 import com.puzzle.bench.post_aac.model.Post
+import java.util.*
 
 class PostMapper : BaseMapperData<PostResponse, PostEntity, Post> {
 
@@ -17,7 +18,7 @@ class PostMapper : BaseMapperData<PostResponse, PostEntity, Post> {
         entity.idPost,
         entity.userId,
         entity.title,
-        entity.body,
+        entity.body.capitalize(),
         entity.wasRead,
         entity.isFavorite
     )

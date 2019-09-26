@@ -3,7 +3,6 @@ package com.puzzle.bench.post_aac.presentation
 import android.os.Bundle
 import android.view.*
 import androidx.core.view.isEmpty
-import androidx.core.view.size
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
@@ -14,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import com.puzzle.bench.post_aac.R
-import com.puzzle.bench.post_aac.SycDataWorker
 import com.puzzle.bench.post_aac.databinding.AllPostFragmentBinding
 import com.puzzle.bench.post_aac.presentation.adapter.AllPostAdapter
 import com.puzzle.bench.post_aac.presentation.di.ViewModelInjector

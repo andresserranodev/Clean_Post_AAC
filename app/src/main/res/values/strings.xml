@@ -1,11 +1,21 @@
 <resources>
     <string name="app_name">Post_AAC</string>
-    <string name="action_refresh">Refresh</string>
+    <string name="action_refresh">refresh_action</string>
+    <string name="action_add_to_favorites">add_to_favorites_action</string>
+    <string name="action_remove_to_favorites">remove_to_favorites_action</string>
+
+
     <string name="tap_title_all_post">ALL</string>
     <string name="tap_title_favorite">FAVORITES</string>
     <string name="app_title">Post</string>
     <string name="favorite_post">Favorite Post</string>
-    <string name="details">Details the Id is :%s</string>
+    <string name="description_title">Description</string>
+    <string name="user_title">User</string>
+    <string name="comments_title">COMMENTS </string>
+    <string name="user_details_name">Name: %s </string>
+    <string name="user_details_email">Email: %s </string>
+    <string name="user_details_phone">Phone: %s </string>
+    <string name="user_details_website">Website: %s </string>
     <string name="all_post">All Post</string>
     <string name="dot_unread_post_content_description">This is new post</string>
     <string name="thi_is_favorite_post_content_description">This is favorite post</string>

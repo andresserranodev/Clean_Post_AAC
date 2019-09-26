@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
-import com.puzzle.bench.post_aac.SycDataWorker
+import com.puzzle.bench.post_aac.presentation.SycDataWorker
 import com.puzzle.bench.post_aac.data.database.dao.CommentDao
 import com.puzzle.bench.post_aac.data.database.dao.PostDao
 import com.puzzle.bench.post_aac.data.database.dao.UserDao
