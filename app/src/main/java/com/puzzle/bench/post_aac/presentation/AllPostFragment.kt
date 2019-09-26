@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.observe
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import com.puzzle.bench.post_aac.R
@@ -50,7 +51,7 @@ class AllPostFragment : Fragment() {
     }
 
     private fun subscribeViewModel(allPostAdapter: AllPostAdapter) {
-        viewModel.getAllPostLiveData().observe(::getLifecycle) {
+        viewModel.allPostLiveData.observe(viewLifecycleOwner) {
             allPostAdapter.submitList(it)
         }
     }

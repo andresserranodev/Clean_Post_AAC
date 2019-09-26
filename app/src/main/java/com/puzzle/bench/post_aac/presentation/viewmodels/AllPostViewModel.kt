@@ -9,7 +9,7 @@ class AllPostViewModel internal constructor(
 ) :
     ViewModel() {
 
-    fun getAllPostLiveData() = postStorageImpl.getAllPost()
+    val allPostLiveData = postStorageImpl.getAllPost()
 
     fun deleteAll() {
         viewModelScope.launch {

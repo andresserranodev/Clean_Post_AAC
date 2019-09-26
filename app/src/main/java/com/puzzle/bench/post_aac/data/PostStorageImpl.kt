@@ -17,7 +17,7 @@ class PostStorageImpl(
         postDao.insertAll(postList)
     }
 
-     fun getAllPost(): LiveData<List<Post>> {
+    fun getAllPost(): LiveData<List<Post>> {
         return Transformations.map(postDao.getAllPost()) { postListEntity ->
             postListEntity.map {
                 postMapper.transformEntityToPresentation(it)
@@ -25,9 +25,11 @@ class PostStorageImpl(
         }
     }
 
-    suspend fun getPostById(idPost: Int): Post {
-        return postMapper.transformEntityToPresentation(postDao.getPostById(idPost))
 
+    fun getPostById(idPost: Int): LiveData<Post> {
+        return Transformations.map(postDao.getPostById(idPost)) {
+            postMapper.transformEntityToPresentation(it)
+        }
     }
 
     suspend fun deleteAll() {

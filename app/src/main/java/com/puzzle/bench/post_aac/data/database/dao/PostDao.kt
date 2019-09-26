@@ -13,7 +13,7 @@ interface PostDao {
     fun getAllPost(): LiveData<List<PostEntity>>
 
     @Query("SELECT * from post_table WHERE idPost = :idPost")
-    suspend fun getPostById(idPost: Int): PostEntity
+    fun getPostById(idPost: Int): LiveData<PostEntity>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertAll(post: List<PostEntity>)
