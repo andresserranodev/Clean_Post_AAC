@@ -42,7 +42,6 @@ script:
   - echo "Building app"
   - ./gradlew clean assemble jacocoTestReport connectedCheck
 
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+
 
 
