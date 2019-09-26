@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.puzzle.bench.post_aac.databinding.PostItemBinding
 import com.puzzle.bench.post_aac.model.Post
-import com.puzzle.bench.post_aac.presentation.HomeViewPagerFragmentDirections
+import com.puzzle.bench.post_aac.presentation.fragment.HomeViewPagerFragmentDirections
 
 class AllPostAdapter : ListAdapter<Post, RecyclerView.ViewHolder>(AllPostDiffCallback()) {
 
