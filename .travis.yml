@@ -32,19 +32,20 @@ android:
     - addon-google_apis-google-19 # google play services
     - $ANDROID_TARGET
     - sys-img-${ANDROID_ABI}-${ANDROID_TARGET}
+
 licenses:
-    - 'android-sdk-licenses-.+'
-    - '.+'
+  - 'android-sdk-licenses-.+'
+  - '.+'
 
 before_script:
   - chmod +x gradlew      #Grand permissions
   - android list targets
   - echo no | android create avd --force --name test --target $ANDROID_TARGET --abi $ANDROID_ABI    #Create AVD for given api
   - emulator -avd test -no-skin -no-audio -no-window &    #Start emulator
-  -
+
 before_install:
   - mkdir "$ANDROID_HOME/licenses" || true
-  - cp ./android-sdk-license/* "$ANDROID_HOME/licenses/"
+  - cp ./android-sdk-licenses/* "$ANDROID_HOME/licenses/"
   - chmod +x gradlew
   - ./gradlew dependencies || true
 
