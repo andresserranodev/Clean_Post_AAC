@@ -11,8 +11,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.RecyclerView
 import com.puzzle.bench.post_aac.R
 import com.puzzle.bench.post_aac.databinding.PostDetailsFragmentBinding
+import com.puzzle.bench.post_aac.presentation.adapter.CommentsAdapter
 import com.puzzle.bench.post_aac.presentation.di.ViewModelInjector
 import com.puzzle.bench.post_aac.presentation.viewmodels.PostDetailViewModel
 import kotlinx.android.synthetic.main.post_details_fragment.*
@@ -44,6 +47,12 @@ class PostDetailFragment : Fragment() {
             .apply {
                 viewModel = viewModelPostDetail
                 lifecycleOwner = viewLifecycleOwner
+
+                val adapterComments = CommentsAdapter()
+                commentsListRv.apply {
+                    adapter = adapterComments
+                    addItemDecoration(DividerItemDecoration(this.context, RecyclerView.VERTICAL))
+                }
                 toolbar.setNavigationOnClickListener { view ->
                     view.findNavController().navigateUp()
                 }
@@ -73,7 +82,8 @@ class PostDetailFragment : Fragment() {
                     if (it.isEmpty()) {
                         viewModelPostDetail.fetchComments()
                     } else {
-                        post_comments_list_tv.text = it[0].body
+                        adapterComments.submitList(it)
+                        commentsProgressbar.visibility = View.GONE
                     }
                 }
             }
