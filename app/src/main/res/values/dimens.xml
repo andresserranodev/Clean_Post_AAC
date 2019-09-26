@@ -4,4 +4,8 @@
     <dimen name="post_title_item_margin_start">8dp</dimen>
     <dimen name="blue_dot_unread_post_size">15dp</dimen>
     <dimen name="margin_details_text_view">15dp</dimen>
+    <dimen name="margin_comments_item_body">10dp</dimen>
+    <dimen name="margin_favorite_post_item_body">10dp</dimen>
+
+
 </resources>

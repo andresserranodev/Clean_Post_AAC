@@ -8,6 +8,7 @@ import com.puzzle.bench.post_aac.data.mapper.PostMapper
 import com.puzzle.bench.post_aac.data.mapper.UserMapper
 import com.puzzle.bench.post_aac.data.networking.RetrofitClient
 import com.puzzle.bench.post_aac.presentation.viewmodels.AllPostViewModelFactory
+import com.puzzle.bench.post_aac.presentation.viewmodels.FavoritePostViewModelFactory
 import com.puzzle.bench.post_aac.presentation.viewmodels.PostDetailViewModelFactory
 
 object ViewModelInjector {
@@ -35,6 +36,10 @@ object ViewModelInjector {
 
     fun provideAllPostViewModel(context: Context) =
         AllPostViewModelFactory(providePostStorageImpl(context))
+
+
+    fun provideFavoritePostViewModel(context: Context) =
+        FavoritePostViewModelFactory(providePostStorageImpl(context))
 
     fun providePostDetailsViewModel(context: Context, postId: Int, userId: Int) =
         PostDetailViewModelFactory(

@@ -4,8 +4,8 @@
     <data>
 
         <variable
-            name="comment"
-            type="com.puzzle.bench.post_aac.model.Comment" />
+            name="post"
+            type="com.puzzle.bench.post_aac.model.Post" />
     </data>
 
     <LinearLayout
@@ -17,7 +17,7 @@
             android:id="@+id/string_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_comments_item_body"
-            android:text="@{comment.body}" />
+            android:layout_margin="@dimen/margin_favorite_post_item_body"
+            android:text="@{post.body}" />
     </LinearLayout>
 </layout>
