@@ -12,7 +12,7 @@ import org.junit.Test
 
 class FetchAllPostServiceImplTest {
 
-    private lateinit var dataSourceAllPostServiceImpl: FetchAllPostServiceImpl
+    private lateinit var fetchAllPostServiceImpl: FetchAllPostServiceImpl
     private val serviceResponse = getDummyListPostResponse()
     private val service = mock<JsonPlaceholderApi> {
         onBlocking { getAllPostRequest() } doReturn serviceResponse
@@ -22,13 +22,13 @@ class FetchAllPostServiceImplTest {
 
     @Before
     fun setUp() {
-        dataSourceAllPostServiceImpl = FetchAllPostServiceImpl(service, postMapper)
+        fetchAllPostServiceImpl = FetchAllPostServiceImpl(service, postMapper)
     }
 
     @Test
     fun getPostRequest() {
         runBlocking {
-            dataSourceAllPostServiceImpl.fetchAllPost()
+            fetchAllPostServiceImpl.fetchAllPost()
             verify(service).getAllPostRequest()
             verify(postMapper).transformServiceToEntity(serviceResponse[0])
         }

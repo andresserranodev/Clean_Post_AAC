@@ -8,17 +8,20 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import com.puzzle.bench.post_aac.SycDataWorker
+import com.puzzle.bench.post_aac.data.database.dao.CommentDao
 import com.puzzle.bench.post_aac.data.database.dao.PostDao
 import com.puzzle.bench.post_aac.data.database.dao.UserDao
+import com.puzzle.bench.post_aac.data.database.entity.CommentEntity
 import com.puzzle.bench.post_aac.data.database.entity.PostEntity
 import com.puzzle.bench.post_aac.data.database.entity.UserEntity
 
 const val DATABASE_NAME = "post-aac-db"
 
-@Database(entities = [PostEntity::class, UserEntity::class], version = 1)
+@Database(entities = [PostEntity::class, UserEntity::class, CommentEntity::class], version = 1)
 abstract class PostAACRoomDatabase : RoomDatabase() {
     abstract fun postDao(): PostDao
     abstract fun userDao(): UserDao
+    abstract fun commentDao(): CommentDao
 
 
     companion object {

@@ -1,5 +1,6 @@
 package com.puzzle.bench.post_aac.data
 
+import com.puzzle.bench.post_aac.data.networking.responses.CommentsResponse
 import com.puzzle.bench.post_aac.data.networking.responses.PostResponse
 import com.puzzle.bench.post_aac.data.networking.responses.UserResponse
 import com.puzzle.bench.post_aac.model.Post
@@ -46,6 +47,14 @@ class MockData {
                 "$BASE_EMAIL$it",
                 "$BASE_PHONE$it",
                 "$BASE_WEB_SITE$it"
+            )
+        }
+
+        fun getDummyListCommentResponse(): List<CommentsResponse> = (1..20).map {
+            CommentsResponse(
+                it,
+                it,
+                "$BASE_BODY$it"
             )
         }
     }
