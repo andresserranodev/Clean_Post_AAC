@@ -1,4 +1,4 @@
-package com.puzzle.bench.post_aac.presentation
+package com.puzzle.bench.post_aac.presentation.fragment
 
 import android.os.Bundle
 import android.view.*
@@ -14,6 +14,8 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import com.puzzle.bench.post_aac.R
 import com.puzzle.bench.post_aac.databinding.AllPostFragmentBinding
+import com.puzzle.bench.post_aac.presentation.SwipeToDeleteCallback
+import com.puzzle.bench.post_aac.presentation.SycDataWorker
 import com.puzzle.bench.post_aac.presentation.adapter.AllPostAdapter
 import com.puzzle.bench.post_aac.presentation.di.ViewModelInjector
 import com.puzzle.bench.post_aac.presentation.viewmodels.AllPostViewModel

@@ -1,4 +1,4 @@
-package com.puzzle.bench.post_aac.presentation
+package com.puzzle.bench.post_aac.presentation.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

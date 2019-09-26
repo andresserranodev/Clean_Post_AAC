@@ -1,4 +1,4 @@
-package com.puzzle.bench.post_aac.presentation
+package com.puzzle.bench.post_aac.presentation.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,10 +15,10 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.puzzle.bench.post_aac.R
 import com.puzzle.bench.post_aac.databinding.PostDetailsFragmentBinding
+import com.puzzle.bench.post_aac.presentation.PostDetailFragmentArgs
 import com.puzzle.bench.post_aac.presentation.adapter.CommentsAdapter
 import com.puzzle.bench.post_aac.presentation.di.ViewModelInjector
 import com.puzzle.bench.post_aac.presentation.viewmodels.PostDetailViewModel
-import kotlinx.android.synthetic.main.post_details_fragment.*
 import kotlinx.android.synthetic.main.post_details_fragment.toolbar
 
 
