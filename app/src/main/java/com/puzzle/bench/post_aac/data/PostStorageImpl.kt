@@ -36,6 +36,10 @@ class PostStorageImpl(
         postDao.deleteAll()
     }
 
+    suspend fun deleteByIdPost(idPost: Int) {
+        postDao.deleteByIdPost(idPost)
+    }
+
     suspend fun updateWasRead(idPost: Int, wasRead: Boolean) {
         postDao.updateWasRead(idPost, wasRead)
     }

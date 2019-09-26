@@ -20,7 +20,6 @@ class SycDataWorker(context: Context, workerParams: WorkerParameters) :
             val database = PostAACRoomDatabase.getInstance(applicationContext)
             database.postDao().insertAll(dataSourcePost.fetchAllPost())
             Result.success()
-
         } catch (ex: Exception) {
             Log.e(TAG, "Error seeding database", ex)
             Result.failure()
