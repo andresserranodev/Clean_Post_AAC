@@ -1,11 +1,9 @@
 package com.puzzle.bench.post_aac.data.mapper
 
-import com.puzzle.bench.post_aac.data.MockData.Factory.BASE_BODY
+import com.puzzle.bench.post_aac.utils.MockData.Factory.BASE_BODY
 import com.puzzle.bench.post_aac.data.database.entity.CommentEntity
-import com.puzzle.bench.post_aac.data.database.entity.PostEntity
 import com.puzzle.bench.post_aac.data.networking.responses.CommentsResponse
 import com.puzzle.bench.post_aac.model.Comment
-import com.puzzle.bench.post_aac.model.Post
 import org.junit.Before
 import org.junit.Test
 

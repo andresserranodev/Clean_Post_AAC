@@ -52,7 +52,9 @@ class AllPostFragment : Fragment() {
     private fun initDeleteSwiped() {
         val swipeHandler = object : SwipeToDeleteCallback() {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                viewModel.deletePost(viewHolder.adapterPosition)
+                viewModel.allPostLiveData.value?.get(viewHolder.adapterPosition)?.postId?.let {
+                    viewModel.deletePost(it)
+                }
             }
         }
         val itemTouchHelper = ItemTouchHelper(swipeHandler)

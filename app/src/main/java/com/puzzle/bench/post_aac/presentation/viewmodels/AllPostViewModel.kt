@@ -17,12 +17,9 @@ class AllPostViewModel internal constructor(
         }
     }
 
-    fun deletePost(position: Int) {
+    fun deletePost(postId: Int) {
         viewModelScope.launch {
-            allPostLiveData.value?.get(position)?.postId?.let {
-                postStorageImpl.deleteByIdPost(it)
-            }
-
+            postStorageImpl.deleteByIdPost(postId)
         }
     }
 }

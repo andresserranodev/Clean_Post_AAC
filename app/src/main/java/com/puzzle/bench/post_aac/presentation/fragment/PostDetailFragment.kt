@@ -69,7 +69,6 @@ class PostDetailFragment : Fragment() {
                     }
                 }
                 viewModelPostDetail.updateStatus()
-                viewModelPostDetail.fetchComments()
                 viewModelPostDetail.postInfoLiveData.observe(viewLifecycleOwner) {
                     if (it.isFavorite) {
                         renderRemoveFavoriteMenuItem()
