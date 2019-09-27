@@ -35,6 +35,8 @@ ignore:
   - "**/room/**"
   - "**/android/**"
   - "**/workers/**"
+  - "**/factory/**"
+
 
 
 
