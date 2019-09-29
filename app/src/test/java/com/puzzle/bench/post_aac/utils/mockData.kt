@@ -1,5 +1,6 @@
 package com.puzzle.bench.post_aac.utils
 
+import com.puzzle.bench.post_aac.data.database.entity.CommentEntity
 import com.puzzle.bench.post_aac.data.database.entity.PostEntity
 import com.puzzle.bench.post_aac.data.networking.responses.CommentsResponse
 import com.puzzle.bench.post_aac.data.networking.responses.PostResponse
@@ -29,6 +30,14 @@ class MockData {
                 "$BASE_BODY$it",
                 true,
                 nextBoolean()
+            )
+        }
+
+        fun getDummyListCommentEntity(): List<CommentEntity> = (1..20).map {
+            CommentEntity(
+                it,
+                it,
+                "$BASE_BODY$it"
             )
         }
 
