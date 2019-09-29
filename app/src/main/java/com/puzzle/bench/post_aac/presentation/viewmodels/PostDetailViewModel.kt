@@ -25,10 +25,16 @@ class PostDetailViewModel(
     val userInfoLiveData = userStorageImpl.getUserById(userId)
     val commentsLiveData = commentStorageImpl.getCommentsByPostId(postId)
 
+    val commentsStateRequest: MutableLiveData<String> = MutableLiveData()
 
     fun fetchComments() {
         viewModelScope.launch {
-            commentStorageImpl.insertAll(fetchCommentByPostId.fetchCommentByPostId(postId))
+            val resultService = fetchCommentByPostId.fetchCommentByPostId(postId)
+            if (resultService.error.isEmpty()) {
+                commentStorageImpl.insertAll(resultService.listComments)
+            } else {
+                commentsStateRequest.postValue(resultService.error)
+            }
         }
     }
 
