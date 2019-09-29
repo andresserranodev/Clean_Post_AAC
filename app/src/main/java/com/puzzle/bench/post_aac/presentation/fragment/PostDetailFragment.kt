@@ -13,6 +13,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import com.puzzle.bench.post_aac.R
 import com.puzzle.bench.post_aac.databinding.PostDetailsFragmentBinding
 import com.puzzle.bench.post_aac.presentation.adapter.CommentsAdapter
@@ -26,6 +27,8 @@ const val REMOVE_FAVORITE_MENU_POSITION = 0
 
 class PostDetailFragment : Fragment() {
 
+    private lateinit var binding: PostDetailsFragmentBinding
+
     private val args: PostDetailFragmentArgs by navArgs()
 
     private val viewModelPostDetail: PostDetailViewModel by viewModels {
@@ -37,7 +40,7 @@ class PostDetailFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = DataBindingUtil.inflate<PostDetailsFragmentBinding>(
+        binding = DataBindingUtil.inflate<PostDetailsFragmentBinding>(
             inflater,
             R.layout.post_details_fragment,
             container,
@@ -79,6 +82,7 @@ class PostDetailFragment : Fragment() {
                 viewModelPostDetail.commentsLiveData.observe(viewLifecycleOwner) {
                     if (it.isEmpty()) {
                         viewModelPostDetail.fetchComments()
+                        subscribeFetchCommentsState()
                     } else {
                         adapterComments.submitList(it)
                         commentsProgressbar.visibility = View.GONE
@@ -86,6 +90,29 @@ class PostDetailFragment : Fragment() {
                 }
             }
         return binding.root
+    }
+
+    private fun subscribeFetchCommentsState() {
+        viewModelPostDetail.commentsStateRequest.observe(viewLifecycleOwner) {
+            binding.commentsProgressbar.visibility = View.GONE
+            if (it.isNotEmpty()) {
+                displayErrorMessage()
+            }
+        }
+    }
+
+    private fun displayErrorMessage() {
+        activity?.let {
+            Snackbar.make(
+                it.findViewById(android.R.id.content),
+                getString(R.string.network_error),
+                Snackbar.LENGTH_LONG
+            )
+                .setAction(getString(R.string.retry)) {
+                    viewModelPostDetail.fetchComments()
+                }.show()
+        }
+
     }
 
     private fun renderAddFavoriteMenuItem() {

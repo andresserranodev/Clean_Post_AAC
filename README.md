@@ -2,12 +2,19 @@
 [![codecov](https://codecov.io/gh/adsf117/Clean_Post_AAC/branch/develop/graph/badge.svg)](https://codecov.io/gh/adsf117/Clean_Post_AAC)
 [![CodeFactor](https://www.codefactor.io/repository/github/adsf117/clean_post_aac/badge)](https://www.codefactor.io/repository/github/adsf117/clean_post_aac) 
 
-# Clean Post AAC
+#  Postapp Android Architecture Components
+Follow :
 
+[Dependency Inversion Principle (DIP)](https://martinfowler.com/articles/dipInTheWild.html)(without frameworks)
 
-How it looks: 
-(add image)
-Getting Started
+[MVVM Components](https://devexperto.com/mvvm-vs-mvp/) 
+
+[Continuous Integration](https://www.martinfowler.com/articles/continuousIntegration.html) [Using Tavis](https://travis-ci.org/)
+
+## How it looks
+![alt text](https://github.com/adsf117/Clean_Post_AAC/blob/develop/info/how_it_looks.gif)
+
+## Getting Started
 This project uses the Gradle build system. To build this project, use the gradlew build command or use "Import Project" in Android Studio.
 
 There are one Gradle pluggin to run  the test and get the coverage report using jacoco
@@ -29,11 +36,12 @@ presentation This module has all android framework
 each modules has his own object and interact using mappers.
 The viewModel are injecting by a own factory but is easy replace the implemantation by Dagger2 or koin
 
-(add image)
+![alt text](https://github.com/adsf117/Clean_Post_AAC/blob/develop/info/Clean%20Post%20AAC.png)
+
 
 --------------
 
-# TODO 
+## TODO 
 * DataBase there 3 tables without relationship (TODO improve that)
  * create the viewModesl test 
  * create the Storage test
@@ -41,7 +49,7 @@ The viewModel are injecting by a own factory but is easy replace the implemantat
 --------------
 
  
-#Libraries Used :
+## Libraries Used :
 
 * [Room](https://developer.android.com/jetpack/androidx/releases/room)
 * [Workout manager](https://developer.android.com/topic/libraries/architecture/workmanager/advanced/coroutineworker)
@@ -52,7 +60,7 @@ The viewModel are injecting by a own factory but is easy replace the implemantat
 * [Coroutines](https://developer.android.com/kotlin/coroutines)
 --------------
 
-#References:
+## References:
 
 Google Codelabs:
 * [Kotlin Bootcamp Course](https://codelabs.developers.google.com/kotlin-bootcamp/)
