@@ -1,7 +1,7 @@
 package com.puzzle.bench.post_aac.data
 
-import com.puzzle.bench.post_aac.data.database.entity.CommentEntity
+import com.puzzle.bench.post_aac.model.FetchCommentsState
 
 interface FetchCommentByPostId {
-    suspend fun fetchCommentByPostId(postId: Int): List<CommentEntity>
+    suspend fun fetchCommentByPostId(postId: Int): FetchCommentsState
 }

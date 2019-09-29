@@ -19,4 +19,7 @@
     <string name="all_post">All Post</string>
     <string name="dot_unread_post_content_description">This is new post</string>
     <string name="thi_is_favorite_post_content_description">This is favorite post</string>
+
+    <string name="network_error">Network error, please check you internet connection</string>
+    <string name="retry">Retry</string>
 </resources>
