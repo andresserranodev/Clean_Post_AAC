@@ -1,5 +1,7 @@
-package com.puzzle.bench.post_aac.data
+package com.puzzle.bench.post_aac.utils
 
+import com.puzzle.bench.post_aac.data.database.entity.CommentEntity
+import com.puzzle.bench.post_aac.data.database.entity.PostEntity
 import com.puzzle.bench.post_aac.data.networking.responses.CommentsResponse
 import com.puzzle.bench.post_aac.data.networking.responses.PostResponse
 import com.puzzle.bench.post_aac.data.networking.responses.UserResponse
@@ -20,14 +22,22 @@ class MockData {
         const val BASE_WEB_SITE = "www.dummy.com"
 
 
-        fun getDummyListPost(): List<Post> = (1..100).map {
-            Post(
+        fun getDummyListPostEntity(): List<PostEntity> = (1..100).map {
+            PostEntity(
                 it,
                 it,
                 "$BASE_TITLE$it",
                 "$BASE_BODY$it",
-                nextBoolean(),
+                true,
                 nextBoolean()
+            )
+        }
+
+        fun getDummyListCommentEntity(): List<CommentEntity> = (1..20).map {
+            CommentEntity(
+                it,
+                it,
+                "$BASE_BODY$it"
             )
         }
 

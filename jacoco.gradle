@@ -32,6 +32,7 @@ task jacocoTestReport(type: JacocoReport, dependsOn: "testDebugUnitTest") {
             '**/workers/**',
             '**/room/**',
             '**/retrofit/**',
+            '**/factory/**',
             '**/*PostAACRoomDatabase.class',
             '**/*SycDataWorker.class',
     ]

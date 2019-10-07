@@ -1,8 +1,9 @@
-package com.puzzle.bench.post_aac.presentation.viewmodels
+package com.puzzle.bench.post_aac.presentation.viewmodels.factory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.puzzle.bench.post_aac.data.PostStorageImpl
+import com.puzzle.bench.post_aac.presentation.viewmodels.AllPostViewModel
 
 @Suppress("UNCHECKED_CAST")
 class AllPostViewModelFactory(private val postStorageImpl: PostStorageImpl

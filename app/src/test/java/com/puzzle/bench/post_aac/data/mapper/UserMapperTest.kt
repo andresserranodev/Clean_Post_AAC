@@ -1,14 +1,11 @@
 package com.puzzle.bench.post_aac.data.mapper
 
-import com.puzzle.bench.post_aac.data.MockData.Factory.BASE_EMAIL
-import com.puzzle.bench.post_aac.data.MockData.Factory.BASE_NAME
-import com.puzzle.bench.post_aac.data.MockData.Factory.BASE_PHONE
-import com.puzzle.bench.post_aac.data.MockData.Factory.BASE_WEB_SITE
-import com.puzzle.bench.post_aac.data.database.entity.PostEntity
+import com.puzzle.bench.post_aac.utils.MockData.Factory.BASE_EMAIL
+import com.puzzle.bench.post_aac.utils.MockData.Factory.BASE_NAME
+import com.puzzle.bench.post_aac.utils.MockData.Factory.BASE_PHONE
+import com.puzzle.bench.post_aac.utils.MockData.Factory.BASE_WEB_SITE
 import com.puzzle.bench.post_aac.data.database.entity.UserEntity
-import com.puzzle.bench.post_aac.data.networking.responses.PostResponse
 import com.puzzle.bench.post_aac.data.networking.responses.UserResponse
-import com.puzzle.bench.post_aac.model.Post
 import com.puzzle.bench.post_aac.model.User
 import org.junit.Before
 import org.junit.Test

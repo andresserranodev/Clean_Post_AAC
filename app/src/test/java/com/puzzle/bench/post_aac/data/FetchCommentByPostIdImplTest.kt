@@ -5,6 +5,7 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.puzzle.bench.post_aac.data.mapper.CommentMapper
 import com.puzzle.bench.post_aac.data.networking.retrofit.JsonPlaceholderApi
+import com.puzzle.bench.post_aac.utils.MockData
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
