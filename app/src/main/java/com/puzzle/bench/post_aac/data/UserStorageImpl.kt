@@ -8,6 +8,8 @@ import com.puzzle.bench.post_aac.data.database.entity.UserEntity
 import com.puzzle.bench.post_aac.data.mapper.PostMapper
 import com.puzzle.bench.post_aac.data.mapper.UserMapper
 import com.puzzle.bench.post_aac.model.User
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.withContext
 
 class UserStorageImpl(private val userDao: UserDao, private val userMapper: UserMapper) {
 
@@ -17,7 +19,8 @@ class UserStorageImpl(private val userDao: UserDao, private val userMapper: User
         }
     }
 
-    suspend fun insertAll(user: List<UserEntity>) {
+    suspend fun insertAll(user: List<UserEntity>) = withContext(IO) {
+
         userDao.insertAll(user)
     }
 
