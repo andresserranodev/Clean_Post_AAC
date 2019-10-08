@@ -16,8 +16,6 @@ class FetchCommentByPostIdImpl(
     override suspend fun fetchCommentByPostId(postId: Int): FetchCommentsState = withContext(
         Dispatchers.IO
     ) {
-        StrictMode.noteSlowCall("fetchCommentByPostId")
-        println("fetchCommentByPostId on thread ${Thread.currentThread().name}")
         return@withContext try {
             val response = jsonPlaceholderApi.getAllCommentsRequest(postId).map {
                 commentMapper.transformServiceToEntity(it)

@@ -20,7 +20,6 @@ class UserStorageImpl(private val userDao: UserDao, private val userMapper: User
     }
 
     suspend fun insertAll(user: List<UserEntity>) = withContext(IO) {
-
         userDao.insertAll(user)
     }
 

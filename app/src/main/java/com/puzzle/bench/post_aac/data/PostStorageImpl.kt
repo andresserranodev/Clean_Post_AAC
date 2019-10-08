@@ -56,8 +56,6 @@ class PostStorageImpl(
     }
 
     suspend fun updateIsFavorite(idPost: Int, isFavorite: Boolean) = withContext(IO){
-        StrictMode.noteSlowCall("updateIsFavorite")
-        println("updateIsFavorite on thread ${Thread.currentThread().name}")
         postDao.updateIsFavorite(idPost, isFavorite)
     }
 
