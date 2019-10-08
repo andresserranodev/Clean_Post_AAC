@@ -36,6 +36,8 @@ ignore:
   - "**/android/**"
   - "**/workers/**"
   - "**/factory/**"
+  - "**/activity/**"
+
 
 
 
