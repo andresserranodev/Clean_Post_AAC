@@ -7,6 +7,8 @@ import com.puzzle.bench.post_aac.data.database.entity.CommentEntity
 import com.puzzle.bench.post_aac.data.mapper.CommentMapper
 import com.puzzle.bench.post_aac.data.mapper.PostMapper
 import com.puzzle.bench.post_aac.model.Comment
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class CommentStorageImpl(private val commentDao: CommentDao, private val mapper: CommentMapper) {
 
@@ -18,7 +20,7 @@ class CommentStorageImpl(private val commentDao: CommentDao, private val mapper:
         }
     }
 
-    suspend fun insertAll(comments: List<CommentEntity>) {
+    suspend fun insertAll(comments: List<CommentEntity>)= withContext(Dispatchers.IO) {
         commentDao.insertAll(comments)
     }
 

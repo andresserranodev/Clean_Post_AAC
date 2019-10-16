@@ -1,11 +1,14 @@
 package com.puzzle.bench.post_aac.data
 
+import android.os.StrictMode
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import com.puzzle.bench.post_aac.data.database.dao.PostDao
 import com.puzzle.bench.post_aac.data.database.entity.PostEntity
 import com.puzzle.bench.post_aac.data.mapper.PostMapper
 import com.puzzle.bench.post_aac.model.Post
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.withContext
 
 
 class PostStorageImpl(
@@ -13,7 +16,7 @@ class PostStorageImpl(
     private val postMapper: PostMapper
 ) {
 
-    suspend fun insertAll(postList: List<PostEntity>) {
+    suspend fun insertAll(postList: List<PostEntity>) = withContext(IO) {
         postDao.insertAll(postList)
     }
 
@@ -40,19 +43,19 @@ class PostStorageImpl(
         }
     }
 
-    suspend fun deleteAll() {
+    suspend fun deleteAll() = withContext(IO) {
         postDao.deleteAll()
     }
 
-    suspend fun deleteByIdPost(idPost: Int) {
+    suspend fun deleteByIdPost(idPost: Int) = withContext(IO) {
         postDao.deleteByIdPost(idPost)
     }
 
-    suspend fun updateWasRead(idPost: Int, wasRead: Boolean) {
+    suspend fun updateWasRead(idPost: Int, wasRead: Boolean) = withContext(IO) {
         postDao.updateWasRead(idPost, wasRead)
     }
 
-    suspend fun updateIsFavorite(idPost: Int, isFavorite: Boolean) {
+    suspend fun updateIsFavorite(idPost: Int, isFavorite: Boolean) = withContext(IO){
         postDao.updateIsFavorite(idPost, isFavorite)
     }
 
